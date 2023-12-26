@@ -1,7 +1,7 @@
 
 # Accessibility Checker
 
-Accessibility Checker is a tool designed to help web developers and accessibility auditors in assessing the accessibility of websites. It leverages Puppeteer and axe-core to automate the detection of common accessibility issues, providing a quick and efficient means to ensure web content is accessible to all users, including those with disabilities. This tool is particularly useful for ensuring compliance with Web Content Accessibility Guidelines (WCAG).
+Accessibility Checker is a web-based tool designed to help web developers and accessibility auditors in assessing the accessibility of websites. It leverages Puppeteer and axe-core to automate the detection of common accessibility issues, providing a quick and efficient means to ensure web content is accessible to all users, including those with disabilities. This tool is particularly useful for ensuring compliance with Web Content Accessibility Guidelines (WCAG).
 
 ## Getting Started
 
@@ -33,17 +33,16 @@ npm install
 To run the Accessibility Checker, execute the following command in the root directory of the project:
 
 ```bash
-node accessibilityCheck.js
+node server.js
 ```
 
-By default, the script checks the accessibility of 'https://example.com'. To check a different website, edit the `accessibilityCheck.js` file and replace the URL in the `runAccessibilityCheck` function call with the desired website URL.
+Open a browser and navigate to `http://localhost:3000`. Enter the URL of the website you want to check in the input field and click the "Check Accessibility" button. The results will be displayed in an HTML table format.
 
-```javascript
-// Replace with the URL you want to test
-runAccessibilityCheck('https://yourwebsite.com');
-```
+### UI Customization
 
-The script will output a list of accessibility violations found on the specified webpage.
+- The project includes a `style.css` file for basic styling.
+- The footer of the UI contains links to Rast Mobile's website and social media accounts.
+- You can modify `style.css` and the HTML files to customize the UI according to your branding and design preferences.
 
 ### Contributing
 
