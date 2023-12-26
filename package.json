@@ -4,28 +4,28 @@
     "description": "A tool for assessing website accessibility, leveraging Puppeteer and axe-core. It automates the process of detecting common accessibility issues, providing a quick and efficient means to ensure web content is accessible to all users, including those with disabilities. Ideal for developers and accessibility auditors aiming to comply with WCAG standards.",
     "main": "accessibilityCheck.js",
     "scripts": {
-      "test": "echo \"No test specified\" && exit 0"
+        "test": "echo \"No test specified\" && exit 0"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/mobilerast/accessibility-checker.git"
+        "type": "git",
+        "url": "git+https://github.com/mobilerast/accessibility-checker.git"
     },
     "keywords": [
-      "accessibility",
-      "wcag",
-      "audit",
-      "puppeteer",
-      "axe-core"
+        "accessibility",
+        "wcag",
+        "audit",
+        "puppeteer",
+        "axe-core"
     ],
     "author": "Rast Mobile <mobilerast@gmail.com>",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/mobilerast/accessibility-checker/issues"
+        "url": "https://github.com/mobilerast/accessibility-checker/issues"
     },
     "homepage": "https://rastmobile.com",
     "dependencies": {
-      "axe-core": "^4.8.2",
-      "puppeteer": "^21.0.0"
+        "axe-core": "^4.8.2",
+        "axe-puppeteer": "^1.1.1",
+        "puppeteer": "^21.0.0"
     }
-  }
-  
+}
