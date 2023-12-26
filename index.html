@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Accessibility Checker</title>
+    <link rel="stylesheet" href="style.css" 
+  </head>
+  <body>
+    <h1>Accessibility Checker</h1>
+    <form id="urlForm">
+      <input
+        type="text"
+        id="urlInput"
+        placeholder="Enter URL to check"
+        required
+      />
+      <button type="submit">Check Accessibility</button>
+    </form>
+    <table id="resultsTable" style="display: none">
+      <thead>
+        <tr>
+          <th>Violation</th>
+          <th>Description</th>
+          <th>Element</th>
+        </tr>
+      </thead>
+      <tbody id="resultsBody"></tbody>
+    </table>
+
+    <script>
+      document.getElementById("urlForm").onsubmit = async function (e) {
+        e.preventDefault();
+        const url = document.getElementById("urlInput").value;
+        const response = await fetch("/check", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ url: url }),
+        });
+        const data = await response.json();
+        displayResults(data);
+      };
+
+      function displayResults(results) {
+        const table = document.getElementById("resultsTable");
+        const tbody = document.getElementById("resultsBody");
+        tbody.innerHTML = "";
+        results.violations.forEach((violation) => {
+          const tr = document.createElement("tr");
+          const htmlElement = violation.nodes
+            .map((node) => node.html)
+            .join(", ");
+          tr.innerHTML = `<td>${violation.id}</td><td>${violation.description}</td>`;
+          const td = document.createElement("td");
+          td.innerText = htmlElement;
+          tr.appendChild(td);
+          tbody.appendChild(tr);
+        });
+        table.style.display = "table";
+      }
+    </script>
+    <!-- ... existing HTML content ... -->
+
+<footer>
+    <p>&copy; 2023 Rast Mobile</p>
+    <p>
+        Visit us at <a href="https://rastmobile.com" target="_blank">rastmobile.com</a><br>
+        Follow us on:
+        <a href="https://twitter.com/rastmobile" target="_blank">Twitter</a> |
+        <a href="https://facebook.com/rastmobile" target="_blank">Facebook</a> |
+        <a href="https://instagram.com/mobilerast" target="_blank">Instagram</a> |
+        <a href="https://linkedin.com/company/rastmobile" target="_blank">LinkedIn</a>
+    </p>
+</footer>
+
+  </body>
+</html>

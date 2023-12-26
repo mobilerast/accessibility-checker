@@ -26,4 +26,4 @@ async function runAccessibilityCheck(url) {
 }
 
 // Replace with the URL you want to test
-runAccessibilityCheck('https://rastmobile.com');
+runAccessibilityCheck('https://borusancat.com');
