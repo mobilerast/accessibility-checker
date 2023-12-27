@@ -36,7 +36,7 @@ To run the Accessibility Checker, execute the following command in the root dire
 node server.js
 ```
 
-Open a browser and navigate to `http://localhost:3000`. Enter the URL of the website you want to check in the input field and click the "Check Accessibility" button. The results will be displayed in an HTML table format.
+Open a browser and navigate to `http://localhost:3001`. Enter the URL of the website you want to check in the input field and click the "Check Accessibility" button. The results will be displayed in an HTML table format.
 
 ### UI Customization
 
